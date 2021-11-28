@@ -1,13 +1,15 @@
+import Navbar from './Navbar/Navbar';
+import pizzaImage from '../Image/pizza-bg.jpg'
 import './App.css'
 
-function App() {
+export default function App() {
   return (
     <div>
-      <div className='background'>
-        <p>Hello</p>
-      </div>
+        <Navbar />
+
+        <img src={pizzaImage} alt="Background of the pizza" className='bg'/>
+
+      <div style={{height: "200vh"}} />
     </div>
   );
 }
-
-export default App;
