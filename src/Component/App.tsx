@@ -1,6 +1,6 @@
 import Navbar from './Navbar/Navbar';
 import './App.css';
-
+import pizzaLogo from '../Image/pizza-logo.jpg';
 
 export default function App() {
   return (
@@ -12,8 +12,10 @@ export default function App() {
 
         <div className="bg-transparent half-width flex-column">
           <h1>
-            Pizzeria pizzeria
+            Pizzeria template
           </h1>
+
+          <img src={pizzaLogo} alt="Logo pizzeria" className="logo" />
         </div>
       </div>
 
