@@ -4,15 +4,7 @@ export default function navbar() {
     return (
         <div className="nav fixed">
             <div className="link">
-                <span>Pizza</span>
-            </div>
-
-            <div className='link'>
-                <span>Calzoni</span>
-            </div>
-
-            <div className='link'>
-                <span>Dolci</span>
+                <span>Menù</span>
             </div>
 
             <div className='link'>

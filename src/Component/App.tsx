@@ -1,15 +1,23 @@
 import Navbar from './Navbar/Navbar';
-import pizzaImage from '../Image/pizza-bg.jpg'
-import './App.css'
+import './App.css';
+
 
 export default function App() {
   return (
     <div>
-        <Navbar />
+      <div className='container'>
+        <div className="half-width">
+          <Navbar />
+        </div>
 
-        <img src={pizzaImage} alt="Background of the pizza" className='bg'/>
+        <div className="bg-transparent half-width flex-column">
+          <h1>
+            Pizzeria pizzeria
+          </h1>
+        </div>
+      </div>
 
-      <div style={{height: "200vh"}} />
+      <div style={{ height: "200vh" }} />
     </div>
   );
 }
