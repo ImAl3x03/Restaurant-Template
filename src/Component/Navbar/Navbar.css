@@ -1,18 +1,20 @@
 .nav {
+    width: 50%;
+
     display: flex;
     justify-content: space-around;
-
-    width: 50%;
 }
 
-.fixed {
-    position: fixed;
-}
-
+/*
+    CSS Rules for the links of the navbar
+*/
 .link {
     margin-top: 20px;
 }
 
+/*
+    CSS Rules for the text of the link of the navbar
+*/
 .link > span {
     font-size: 35px;
     font-family: 'Permanent Marker', cursive;
