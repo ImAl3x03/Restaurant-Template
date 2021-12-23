@@ -1,0 +1,67 @@
+/*
+    CSS Rules for the container of the header
+*/
+.container {
+    /* Size */
+    width: 100%;
+    height: 1000px;
+    max-height: 100vh;
+    
+    /* Flex display */
+    display: flex;
+    
+    /* Cancel the overflow for the image */
+    overflow: hidden;
+
+    /* Aplying the image as background */
+    background-image: url("../Image/pizza-bg-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*
+    CSS Rules for the effect on the left of the header
+*/
+.bg-transparent {
+    /* Size */
+    height: 100%;
+    max-height: 100vh;
+
+    /* Background color for the effect */
+    background-color: rgba(77, 75, 209, 0.4);
+}
+
+/* Title (aka pizzeria's name) */
+.bg-transparent > h1{
+    font-family: 'Jost', sans-serif;
+    font-size: 4em;
+    text-align: center;
+    color: white;
+}
+
+/* Image logo of the pizzeria */
+.logo {
+    width: 60%;
+    height: auto;
+
+    /* Center the image a bit of space from the name */
+    margin: 0 auto;
+    margin-top: 30px;
+
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 800px) {
+    /* Change the image from desktop to mobile */
+    .container {
+        background-image: url("../Image/pizza-bg-mobile.jpg");
+    }
+
+    .logo {
+        width: 75%;
+    }
+
+    .bg-transparent > h1 {
+        font-size: 2em;
+    }
+}

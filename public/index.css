@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fixed {
+    position: fixed;
+}

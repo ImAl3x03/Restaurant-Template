@@ -1,12 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
+import MainPage from './MainPage/mainPage';
+import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <div>
+      <MainPage />
 
+      <div style={{ height: "200vh" }} />
     </div>
   );
 }
-
-export default App;
