@@ -27,14 +27,23 @@ export default class review extends Component<{}, reviewState> {
     render() {
         let element: any = [];
 
-        this.state.review.forEach((ele) => {
+        let reviews = this.state.review;
+
+        if(reviews.length % 2 !== 0) {
+            reviews.length -= 1;
+        }
+
+        for(let i = 0; i < reviews.length; i += 2) {
             element.push(
-                <Card name={ele.name} text={ele.text} star={ele.star} id={ele.id} />
+                <div className="flex-wrap">
+                    <Card name={reviews[i].name} text={reviews[i].text} star={reviews[i].star} id={reviews[i].id} />
+                    <Card name={reviews[i + 1].name} text={reviews[i + 1].text} star={reviews[i + 1].star} id={reviews[i + 1].id} />
+                </div>
             )
-        })
+        }
 
         return (
-            <div>
+            <div id="review">
                 {element}
             </div>
         );

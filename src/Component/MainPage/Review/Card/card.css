@@ -1,0 +1,25 @@
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 40%;
+    margin: 20px 0;
+    border: 1px solid black;
+}
+
+.card-header {
+    display: flex;
+}
+
+.card-header > h3 {
+    font-size: 2.5em;
+}
+
+
+.star-img {
+    width: 25px;
+    height: auto;
+}
