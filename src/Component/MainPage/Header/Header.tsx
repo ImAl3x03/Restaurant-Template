@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar"
 import pizzaLogo from '../../../Image/pizza-logo.jpg'
 
-export default function header() {
+export default function Header() {
     return (
         <div className='container'>
             <div className="half-width">

@@ -1,7 +1,5 @@
 import Review from "../../../../Model/review";
-
-import './card.css';
-
+import './Card.css';
 import fullStar from '../../../../Image/fullstar.png';
 import emptyStar from '../../../../Image/emptystar.png';
 
@@ -10,11 +8,11 @@ export default function card(props: Review) {
     let star = [];
 
     for (i = 0; i < props.star; i++) {
-        star.push(<img src={fullStar} alt="Star of the review" className="star-img" />)
+        star.push(<img src={fullStar} alt="Star of the review" className="star-img" key={i}/>)
     }
 
     while (i < 5) {
-        star.push(<img src={emptyStar} alt="Star of the review" className="star-img" />)
+        star.push(<img src={emptyStar} alt="Star of the review" className="star-img" key={i}/>)
         i++;
     }
 
