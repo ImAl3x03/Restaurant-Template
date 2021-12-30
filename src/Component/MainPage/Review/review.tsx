@@ -8,6 +8,7 @@ import './review.css'
 export default function Review() {
     let initialState: ReviewModel[] = [];
     const [reviews, addReview] = useState(initialState);
+    let limitReview = 6; //setting limiter to 6
 
     useEffect(() => {
         async function getAPI() {
@@ -21,8 +22,16 @@ export default function Review() {
     return (
         <div className="show-reviews">
             {
-                reviews.map((ele) =>
-                    <Card id={ele.id} name={ele.name} text={ele.text} star={ele.star} key={ele.id} />
+                /*sets max of mapping to variable limitReview */
+                reviews.map((ele, index) =>
+                    index < limitReview &&
+                    (<Card
+                        id={ele.id}
+                        name={ele.name}
+                        text={ele.text}
+                        star={ele.star}
+                        key={ele.id}
+                    />)
                 )
             }
         </div>
