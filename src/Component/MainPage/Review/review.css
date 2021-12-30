@@ -1,0 +1,21 @@
+.show-reviews {
+  display: grid;
+  grid-template-columns: repeat(2, 25%);
+  justify-content: space-evenly;
+  height: fit-content;
+  
+}
+
+
+@media screen and (max-width: 800px){
+  /* Change the image from desktop to mobile */
+  .show-reviews{
+    /* set width review to 80% of phone*/
+    grid-template-columns: 70%; 
+    grid-auto-rows:min-content;
+    justify-content: center;
+    justify-content: space-around;
+  }
+
+  /* https://www.youtube.com/watch?v=9zBsdzdE4sM*/
+}

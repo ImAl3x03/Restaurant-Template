@@ -1,5 +1,5 @@
 import Header from './Header/Header';
-import Review from './Review/Review';
+import Review from './Review/review';
 
 export default function MainPage() {
     return (

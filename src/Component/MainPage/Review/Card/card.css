@@ -5,19 +5,24 @@
 }
 
 .card {
-    width: 40%;
+    width:100%;
     margin: 20px 0;
     border: 1px solid black;
 }
 
 .card-header {
+    margin-left: 3%;
     display: flex;
+    flex-direction: column;
 }
 
 .card-header > h3 {
     font-size: 2.5em;
+    flex:1;
 }
-
+.paragraph{
+    margin: 10px;
+}
 
 .star-img {
     width: 25px;
