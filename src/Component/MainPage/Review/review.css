@@ -3,7 +3,6 @@
   grid-template-columns: repeat(2, 35%);
   justify-content: space-evenly;
   height: fit-content;
-  
 }
 
 .button-wrap {
