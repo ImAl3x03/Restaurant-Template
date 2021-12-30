@@ -1,3 +1,12 @@
+#review {
+  margin-top: 2cm;
+}
+
+.review-title {
+  text-align: center;
+  font-size: 4em;
+}
+
 .show-reviews {
   display: grid;
   grid-template-columns: repeat(2, 35%);
@@ -11,6 +20,10 @@
 }
 
 @media screen and (max-width: 800px){
+  .review-title {
+    font-size: 2.5em;
+  }
+
   /* Change the image from desktop to mobile */
   .show-reviews{
     /* set width review to 80% of phone*/
