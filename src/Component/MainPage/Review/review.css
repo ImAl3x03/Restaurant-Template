@@ -1,6 +1,6 @@
 .show-reviews {
   display: grid;
-  grid-template-columns: repeat(2, 25%);
+  grid-template-columns: repeat(2, 35%);
   justify-content: space-evenly;
   height: fit-content;
   

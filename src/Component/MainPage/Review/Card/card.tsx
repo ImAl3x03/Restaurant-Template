@@ -29,9 +29,7 @@ export default function card(props: Review) {
             </div>
 
             <div className="paragraph">
-                <p>
-                    {props.text}
-                </p>
+                {props.text}
             </div>
         </div>
     );

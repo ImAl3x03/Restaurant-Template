@@ -20,7 +20,7 @@ export default function Review() {
     }, [])
 
     return (
-        <div className="show-reviews">
+        <div id="review" className="show-reviews">
             {
                 /*sets max of mapping to variable limitReview */
                 reviews.map((ele, index) =>
