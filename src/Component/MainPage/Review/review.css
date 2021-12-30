@@ -20,5 +20,14 @@
     justify-content: space-around;
   }
 
+  .button-wrap {
+    display: block;
+  }
+
+  .button-wrap button {
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+
   /* https://www.youtube.com/watch?v=9zBsdzdE4sM*/
 }
