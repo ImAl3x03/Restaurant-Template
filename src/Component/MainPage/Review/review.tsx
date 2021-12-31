@@ -8,6 +8,11 @@ import { Dialog, DialogTitle, DialogContent, useFormControlUnstyled } from "@mui
 import { makeStyles } from "@mui/styles";
 import CloseIcon from '@mui/icons-material/Close';
 
+import AddReview from "../AddReview/AddReview";
+
+
+
+
 const buttonStyle = {
     backgroundColor: "rgba(0, 0, 0, 0.8)"
 }
@@ -31,16 +36,23 @@ export default function Review() {
     const [reviews, addReview] = useState(initialState);
     let limitReview = 6; //setting limiter to 6
 
-    const [open, setOpen] = useState(false);
+    const [openAllReviews, setOpenAllReviews] = useState(false);
+
+    /* new section to test */
+    const [addReviews, setAddReviews] = useState(false);
+    const handleAddReview = () => {
+        setAddReviews(!addReviews)
+    }
+
     const dialogClasses = dialogStyle();
     const iconClasses = iconStyle();
 
     const handleClickOpen = () => {
-        setOpen(true);
+        setOpenAllReviews(true);
     }
 
     const handleClose = () => {
-        setOpen(false);
+        setOpenAllReviews(false);
     }
 
     useEffect(() => {
@@ -74,12 +86,12 @@ export default function Review() {
             <div className="button-wrap">
                 <Button variant="contained" size="large" style={buttonStyle} onClick={handleClickOpen}>Show all review</Button>
 
-                <Button variant="contained" size="large" style={buttonStyle} >Add new review</Button>
+                <Button variant="contained" size="large" style={buttonStyle} onClick={handleAddReview}>Add new review</Button>
             </div>
 
-            <Dialog open={open} onClose={handleClose} className={dialogClasses.container} fullWidth={true} maxWidth={"lg"}>
+            <Dialog open={openAllReviews} onClose={handleClose} className={dialogClasses.container} fullWidth={true} maxWidth={"lg"}>
                 <DialogTitle>
-                    <CloseIcon className={iconClasses.root} onClick={handleClose}/>
+                    <CloseIcon className={iconClasses.root} onClick={handleClose} />
                 </DialogTitle>
                 <DialogContent>
                     <div className="show-reviews dialog-container">
@@ -97,6 +109,12 @@ export default function Review() {
                     </div>
                 </DialogContent>
             </Dialog>
+
+            <AddReview
+                open={addReviews}
+                onClose={handleAddReview}
+
+            />
         </div>
     )
 }
