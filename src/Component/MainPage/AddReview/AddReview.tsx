@@ -1,70 +1,54 @@
 import React, { useState } from "react";
-import ReviewModel from '../../../Model/review'
+import AddReviewCheck from "./AddReviewCheck";
 
 import { Dialog, DialogContent, DialogTitle, MenuItem } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import { TextField } from "@mui/material";
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
 import './AddReview.css'
+import { PortraitSharp } from "@mui/icons-material";
 
 interface Props {
   open: boolean,
   onClose: () => void,
   className?: string,
-
 }
+
 
 export default function AddReview(props: Props) {
   const [review, setReview] = useState<string>("");
   const [reviewStars, setReviewStars] = useState("5");
   const [enteredName, setEnteredName] = useState<string>("")
   const rating = [
-    {
-      value: "5",
-      label: "⭐⭐⭐⭐⭐"
-    },
-    {
-      value: "4",
-      label: "⭐⭐⭐⭐"
-    },
-    {
-      value: "3",
-      label: "⭐⭐⭐"
-    },
-    {
-      value: "2",
-      label: "⭐⭐"
-    },
-    {
-      value: "1",
-      label: "⭐"
-    }
+    {value: "5",label: "⭐⭐⭐⭐⭐"},
+    {value: "4",label: "⭐⭐⭐⭐"},
+    {value: "3",label: "⭐⭐⭐"},
+    {value: "2",label: "⭐⭐"},
+    {value: "1",label: "⭐"}
   ]
-
   const reviewHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setReview(event.target.value)
   }
   const enteredNameHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEnteredName(event.target.value)
   };
-
   const reviewStarsHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setReviewStars(event.target.value)
   }
 
+
   return (
     <Dialog open={props.open} className="add-review">
       <DialogTitle className="dialogue-title">
-        <p>please add your review</p> <CloseIcon onClick={props.onClose} />
+        <p>Please Add your Review</p> <CloseIcon onClick={props.onClose} />
       </DialogTitle>
 
       <DialogContent>
         <Box
           component="form"
           sx={{ /* settign the css of the TextFields*/
-            '& .MuiTextField-root': { m: 1, width: '25' },
+            '& .MuiTextField-root': { m: 1, width: '60' },
           }}>
           <div>
             <TextField
@@ -76,6 +60,9 @@ export default function AddReview(props: Props) {
               onChange={enteredNameHandler}
             />
             <TextField
+            sx={{
+              width:"200",
+            }}
               id="rating-dropbar"
               variant="standard"
               select
@@ -105,7 +92,15 @@ export default function AddReview(props: Props) {
               fullWidth
             />
 
-
+          <AddReviewCheck
+            open={props.open}
+            onClose={props.onClose}
+            name={enteredName}
+            stars={reviewStars}
+            review ={review}
+          >
+            Submit review
+           </AddReviewCheck>
         </Box>
       </DialogContent>
     </Dialog>

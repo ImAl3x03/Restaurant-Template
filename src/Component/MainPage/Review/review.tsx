@@ -113,7 +113,6 @@ export default function Review() {
             <AddReview
                 open={addReviews}
                 onClose={handleAddReview}
-
             />
         </div>
     )
