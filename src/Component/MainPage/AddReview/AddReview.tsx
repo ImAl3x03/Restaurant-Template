@@ -1,22 +1,29 @@
 import React, { useState } from "react";
 import AddReviewCheck from "./AddReviewCheck";
-
 import { Dialog, DialogContent, DialogTitle, MenuItem } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import { TextField } from "@mui/material";
 import Box from '@mui/material/Box';
-
 import './AddReview.css'
-import { PortraitSharp } from "@mui/icons-material";
+import Review from "../../../Model/review";
+import { makeStyles } from "@mui/styles";
 
 interface Props {
   open: boolean,
   onClose: () => void,
+  previousReview: Review[],
+  addReviewFunction: any,
   className?: string,
 }
 
+const iconStyle = makeStyles({
+  root: {
+      cursor: "pointer"
+  }
+})
 
 export default function AddReview(props: Props) {
+  const iconClasses = iconStyle();
   const [review, setReview] = useState<string>("");
   const [reviewStars, setReviewStars] = useState("5");
   const [enteredName, setEnteredName] = useState<string>("")
@@ -41,7 +48,7 @@ export default function AddReview(props: Props) {
   return (
     <Dialog open={props.open} className="add-review">
       <DialogTitle className="dialogue-title">
-        <p>Please Add your Review</p> <CloseIcon onClick={props.onClose} />
+        <p>Please Add your Review</p> <CloseIcon onClick={props.onClose} className={iconClasses.root} />
       </DialogTitle>
 
       <DialogContent>
@@ -98,6 +105,8 @@ export default function AddReview(props: Props) {
             name={enteredName}
             stars={reviewStars}
             review ={review}
+            previousReview = {props.previousReview}
+            addReviewFunction = {props.addReviewFunction}
           >
             Submit review
            </AddReviewCheck>

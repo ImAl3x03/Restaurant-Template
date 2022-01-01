@@ -4,10 +4,9 @@ import ReviewModel from '../../../Model/review'
 import Card from "./Card/card";
 import './review.css'
 import Button from '@mui/material/Button';
-import { Dialog, DialogTitle, DialogContent, useFormControlUnstyled } from "@mui/material";
+import { Dialog, DialogTitle, DialogContent } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import CloseIcon from '@mui/icons-material/Close';
-
 import AddReview from "../AddReview/AddReview";
 
 
@@ -113,6 +112,8 @@ export default function Review() {
             <AddReview
                 open={addReviews}
                 onClose={handleAddReview}
+                previousReview = {reviews}
+                addReviewFunction = {addReview}
             />
         </div>
     )
