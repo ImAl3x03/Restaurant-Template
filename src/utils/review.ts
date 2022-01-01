@@ -18,3 +18,7 @@ export async function getReview(): Promise<Review[]> {
         ]
     }
 }
+
+export async function postReview(data: Review) {
+    await axios.post(URL, data);
+}

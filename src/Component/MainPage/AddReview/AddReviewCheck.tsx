@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from 'axios'
-
+import { postReview } from '../../../utils/review'
 import { Button } from "@mui/material";
 
 interface Props {
@@ -30,24 +29,15 @@ export default function AddReviewCheck(props: Props) {
 
   const checkValidity = () => {
     if (nameIsValid && reviewIsValid) {
+      postReview({
+        id: "",
+        name: props.name,
+        text: props.review,
+        star: parseInt(props.stars)
+      });
+
       //To let the user know it has been submitted
       alert("Review Submitted! \nThanks for your time!")
-
-      axios.post('https://localhost:44369/api/Review',
-        {//JSON file expected for the
-          "name": props.name,
-          "text": props.review,
-          "star": parseInt(props.stars)
-
-        })
-        //testing purposes ONLY
-        .then((response)=>{
-          console.log(response)
-        })
-        .catch((err)=>{
-          //can be changed in the future to let user know something went wrong
-          console.error("Error: ", err)
-        })
 
       props.onClose(!props.open)
     }
