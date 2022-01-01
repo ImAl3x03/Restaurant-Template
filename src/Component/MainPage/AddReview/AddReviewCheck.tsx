@@ -11,12 +11,14 @@ interface Props {
   open: boolean,
   previousReview: Review[],
   addReviewFunction: any,
+  setOpenAlert: any
   onClose: (arg0: boolean) => void
 }
 
 export default function AddReviewCheck(props: Props) {
   const [nameIsValid, setNameIsValid] = useState(false)
   const [reviewIsValid, setReviewIsValid] = useState(false)
+
 
   //minor problem: useEffect runs on every keystroke
   //which is not optimal
@@ -42,11 +44,10 @@ export default function AddReviewCheck(props: Props) {
       let newReview = props.previousReview;
       newReview = newReview.concat([review]);
 
+      props.setOpenAlert(true);
+
       postReview(review);
       props.addReviewFunction(newReview);
-
-      //To let the user know it has been submitted
-      alert("Review Submitted! \nThanks for your time!")
 
       props.onClose(!props.open)
     }
