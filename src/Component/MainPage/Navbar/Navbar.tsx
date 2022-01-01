@@ -1,6 +1,6 @@
 import './Navbar.css'
 
-export default function navbar() {
+export default function Navbar() {
     return (
         <div className="nav fixed">
             <div className="link">
