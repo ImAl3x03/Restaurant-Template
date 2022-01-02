@@ -1,0 +1,17 @@
+
+.footer-container{
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  height: 700px;
+}
+
+/* https://www.youtube.com/watch?v=9zBsdzdE4sM*/
+@media (max-width: 800px){
+  .footer-container{
+    background-color: azure;
+    grid-template-columns: 80%;
+    justify-content: center;
+  }
+  
+}

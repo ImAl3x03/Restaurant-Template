@@ -4,6 +4,8 @@ import { MenuItem, TextField } from '@mui/material';
 import branchesAvailable from '../../../../Model/branchesAvailable'
 import OptionBranches from './OptionsBranches.json'
 
+import './Map.css'
+
 //interface Props {    branch: number,}
 
 export default function Map() {
@@ -15,8 +17,7 @@ export default function Map() {
     };
 
     return (
-
-        <div>
+        <div className='map'>
             <TextField
                 id="select-branch"
                 variant="standard"
@@ -36,13 +37,13 @@ export default function Map() {
                     if (b.id === parseInt(selectedBranch)) {
                         return (
                             <iframe
+                                className='iframe'
                                 src={b.src}
                                 width="600"
                                 height="450"
                                 allowFullScreen={true}
                                 loading="lazy"/>
                             )}
-                            //style={{ border: "0" }} the style needs to be tested, only works with 0 or another number
                 })}
         </div>
     );
