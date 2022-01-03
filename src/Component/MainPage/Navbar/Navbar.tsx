@@ -1,14 +1,29 @@
 import { useState, useEffect } from 'react';
-import { Dialog, DialogContent } from '@mui/material';
+import { Dialog, DialogContent, DialogTitle } from '@mui/material';
 import { getMenu } from '../../../utils/menu';
 import Menu from '../../../Model/menu';
 import './Navbar.css'
 import MenuSection from './MenuSection/MenuSection';
+import CloseIcon from '@mui/icons-material/Close';
+import { makeStyles } from '@mui/styles';
+
+const iconStyle = makeStyles({
+    root: {        
+        float: "right",
+        marginTop: "20px",
+        marginRight: "20px",
+        cursor: "pointer"
+    }
+})
 
 export default function Navbar() {
     let initialState: { [category: string]: Menu[] } = { "": [] }
     const [menu, addMenu] = useState(initialState);
     const [isOpen, setOpen] = useState(false);
+
+    const renderingHierarchy: string[] = ["Primo", "Secondo", "Pizza", "Calzone", "Fritti", "Dolci", "Bevande"]
+
+    const iconClasses = iconStyle();
 
     const handleOnClose = () => {
         setOpen(false);
@@ -25,10 +40,12 @@ export default function Navbar() {
 
     let response: any = [];
 
-    for (let key in menu) {
-        response.push(
-            <MenuSection title={key} element={menu[key]}/>
-        )
+    for (let key of renderingHierarchy) {
+        if (key in menu) {
+            response.push(
+                <MenuSection title={key} element={menu[key]} />
+            )
+        }
     }
 
     return (
@@ -43,7 +60,13 @@ export default function Navbar() {
                 </div>
             </div>
 
-            <Dialog open={isOpen} onClose={handleOnClose} >
+            <Dialog open={isOpen} onClose={handleOnClose} fullWidth={true} maxWidth="md">
+                <DialogTitle>
+                    <div className='title'>
+                        Menù
+                        <CloseIcon className={iconClasses.root} onClick={handleOnClose} />
+                    </div>
+                </DialogTitle>
                 <DialogContent>
                     {response}
                 </DialogContent>
