@@ -47,6 +47,12 @@ export default function Navbar() {
             animation.seek(window.scrollY / 4.5);
     }
 
+    function linkScroll(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+        e.preventDefault();
+
+        document.querySelector("#contact")?.scrollIntoView({behavior: "smooth"});
+    }
+
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
 
@@ -76,7 +82,7 @@ export default function Navbar() {
                 </div>
 
                 <div className='link'>
-                    <a href='#contact'>Contatti</a>
+                    <a href='#contact' onClick={(e) => linkScroll(e)}>Contatti</a>
                 </div>
             </div>
 
