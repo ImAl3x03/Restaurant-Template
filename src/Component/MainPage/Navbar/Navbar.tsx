@@ -56,7 +56,7 @@ export default function Navbar() {
         animation = anime({
             targets: ".nav",
             width: ["50%", "93%"],
-            "background-color": ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"],
+            "background-color": ["rgba(47, 79, 79, 0)", "rgba(47, 79, 79, 1)"],
             autoplay: false
         })
 
