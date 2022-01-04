@@ -7,7 +7,6 @@ import MenuSection from './MenuSection/MenuSection';
 import CloseIcon from '@mui/icons-material/Close';
 import { makeStyles } from '@mui/styles';
 import anime from 'animejs';
-import { WindowSharp } from '@mui/icons-material';
 
 const iconStyle = makeStyles({
     root: {
@@ -54,14 +53,14 @@ export default function Navbar() {
     }
 
     useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-
         animation = anime({
             targets: ".nav",
             width: ["50%", "93%"],
             "background-color": ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"],
             autoplay: false
         })
+
+        window.addEventListener("scroll", handleScroll);
     }, [])
 
     let response: any = [];
@@ -69,7 +68,7 @@ export default function Navbar() {
     for (let key of renderingHierarchy) {
         if (key in menu) {
             response.push(
-                <MenuSection title={key} element={menu[key]} />
+                <MenuSection title={key} element={menu[key]} key={key}/>
             )
         }
     }

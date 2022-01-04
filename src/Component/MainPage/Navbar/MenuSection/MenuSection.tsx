@@ -13,7 +13,7 @@ export default function MenuSection(props: MenuProps) {
                 <p className='ingredients'>{e.name + ": " + e.ingredients.join(", ")}</p>
                 <p className='allergenes'>{e.allergens.join(", ")}</p>
                 <p className='price'>{e.price + " €"}</p>
-                {index != props.element.length - 1 ? <hr /> : ""}
+                {index !== props.element.length - 1 ? <hr /> : ""}
             </div>
         );
     })
