@@ -9,9 +9,6 @@ import { makeStyles } from "@mui/styles";
 import CloseIcon from '@mui/icons-material/Close';
 import AddReview from "../AddReview/AddReview";
 
-
-
-
 const buttonStyle = {
     backgroundColor: "rgba(0, 0, 0, 0.8)"
 }
