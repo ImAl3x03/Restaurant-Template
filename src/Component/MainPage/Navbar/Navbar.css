@@ -1,5 +1,6 @@
 .nav {
-    width: 50%;
+    z-index: 1;
+    padding-bottom: 15px;
 
     display: flex;
     justify-content: space-around;
@@ -15,10 +16,12 @@
 /*
     CSS Rules for the text of the link of the navbar
 */
-.link > span {
+.link > span, .link a {
+    cursor: pointer;
     font-size: 35px;
     font-family: 'Permanent Marker', cursive;
     color: white;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 800px) {

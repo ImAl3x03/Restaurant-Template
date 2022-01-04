@@ -40,11 +40,11 @@ export default function Navbar() {
         getAPI();
     }, [])
 
-    let position: number = window.scrollY;
     let animation: anime.AnimeInstance;
 
     function handleScroll() {
-        animation.seek(window.scrollY / 6);
+        if (window.scrollY < 800)
+            animation.seek(window.scrollY / 4.5);
     }
 
     useEffect(() => {
@@ -52,6 +52,7 @@ export default function Navbar() {
 
         animation = anime({
             targets: ".nav",
+            width: ["50%", "93%"],
             "background-color": ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"],
             autoplay: false
         })
@@ -75,7 +76,7 @@ export default function Navbar() {
                 </div>
 
                 <div className='link'>
-                    <span>Contatti</span>
+                    <a href='#contact'>Contatti</a>
                 </div>
             </div>
 
