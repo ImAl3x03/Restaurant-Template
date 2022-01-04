@@ -25,7 +25,7 @@
 }
 
 @media screen and (max-width: 800px) {
-    .link > span {
+    .link > span, .link a {
         font-size: 20px;
     }
 }
