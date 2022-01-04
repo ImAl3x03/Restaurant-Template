@@ -6,9 +6,11 @@ import './Navbar.css'
 import MenuSection from './MenuSection/MenuSection';
 import CloseIcon from '@mui/icons-material/Close';
 import { makeStyles } from '@mui/styles';
+import anime from 'animejs';
+import { WindowSharp } from '@mui/icons-material';
 
 const iconStyle = makeStyles({
-    root: {        
+    root: {
         float: "right",
         marginTop: "20px",
         marginRight: "20px",
@@ -36,6 +38,23 @@ export default function Navbar() {
         }
 
         getAPI();
+    }, [])
+
+    let position: number = window.scrollY;
+    let animation: anime.AnimeInstance;
+
+    function handleScroll() {
+        animation.seek(window.scrollY / 6);
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        animation = anime({
+            targets: ".nav",
+            "background-color": ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"],
+            autoplay: false
+        })
     }, [])
 
     let response: any = [];
