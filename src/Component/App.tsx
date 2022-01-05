@@ -5,8 +5,6 @@ export default function App() {
   return (
     <>
       <MainPage />
-
-      <div style={{ height: "200vh" }} />
     </>
   );
 }

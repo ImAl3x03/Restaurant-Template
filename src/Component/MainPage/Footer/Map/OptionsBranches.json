@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "branchName": "Sapureat, Napoli",
+    "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.690671069271!2d14.267957215693082!3d40.94444613129874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b074ea0191351%3A0x6d36bdbe93d04f39!2sSapureat!5e0!3m2!1sen!2suk!4v1641071563989!5m2!1sen!2suk"
+  },
+  {
+    "id": 2,
+    "branchName":"Pizzeria Pellone",
+    "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.715675008795!2d14.271939715691039!3d40.856165836719576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b08109efacacd%3A0x6aa3c2098c708387!2sPizzeria%20Pellone!5e0!3m2!1sen!2suk!4v1641076118923!5m2!1sen!2suk"
+  }
+]
