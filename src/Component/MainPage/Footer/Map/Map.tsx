@@ -21,7 +21,7 @@ export default function Map() {
             <TextField
                 id="select-branch"
                 variant="standard"
-                label="Choose Branch"
+                label="I nostri locali"
                 select
                 value = {selectedBranch}
                 onChange={selectedBranchHandler}
