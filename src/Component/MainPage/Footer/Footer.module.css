@@ -1,0 +1,11 @@
+.footerContainer{
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+@media (max-width: 800px){
+  .footerContainer{
+    grid-template-columns: 90%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,23 @@
+/* CSS Rules for the container of the header */
+.headerContainer {
+    background-image: url("../../Image/pizza-bg-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* CSS Rules for the effect on the left of the header */
+.bgHeader {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Title (aka pizzeria's name) */
+.bgHeader > h1{
+    font-family: 'Jost', sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+    /* Change the image from desktop to mobile */
+    .headerContainer {
+        background-image: url("../../Image/pizza-bg-mobile.jpg");
+    }
+}

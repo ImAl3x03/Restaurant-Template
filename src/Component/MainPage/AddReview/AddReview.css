@@ -1,8 +1,0 @@
-
-.dialogue-title{
-  display: flex;
-  flex-direction: row;
-}
-.dialogue-title > p{
-  flex:1;
-}

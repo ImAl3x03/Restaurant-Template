@@ -1,5 +1,5 @@
 import Menu from '../../../../Model/menu'
-import './MenuSection.css';
+import css from './MenuSection.module.css';
 
 interface MenuProps {
     title: string,
@@ -9,18 +9,18 @@ interface MenuProps {
 export default function MenuSection(props: MenuProps) {
     let render = props.element.map((e, index) => {
         return (
-            <div className="menu-element">
-                <p className='ingredients'>{e.name + ": " + e.ingredients.join(", ")}</p>
-                <p className='allergenes'>{e.allergens.join(", ")}</p>
-                <p className='price'>{e.price + " €"}</p>
+            <div className="my-[10px]">
+                <p className='text-[1.5em] py-[2px] px-[10px]'>{e.name + ": " + e.ingredients.join(", ")}</p>
+                <p className='text-[1.25em] py-[2px] px-[10px]'>{e.allergens.join(", ")}</p>
+                <p className='text-[1.25em] py-[2px] px-[10px] italic'>{e.price + " €"}</p>
                 {index !== props.element.length - 1 ? <hr /> : ""}
             </div>
         );
     })
 
     return (
-        <div className="menu-header">
-            <h2>{props.title}</h2>
+        <div className={"p-[20px] my-[20px] rounded-[10px] bg-[#F5F5F5] " + css.menuHeader} >
+            <h2 className={"pl-[5px] text-[2.5em] " + css.title}>{props.title}</h2>
             {render}
         </div>
     )

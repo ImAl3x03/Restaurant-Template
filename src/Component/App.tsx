@@ -1,10 +1,9 @@
-import MainPage from './MainPage/mainPage';
-import './App.css';
+import MainPage from './MainPage/MainPage';
 
 export default function App() {
-  return (
-    <>
-      <MainPage />
-    </>
-  );
+    return (
+        <>
+            <MainPage/>
+        </>
+    );
 }

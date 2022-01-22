@@ -1,0 +1,20 @@
+.showReviews {
+  display: grid;
+  grid-template-columns: repeat(2, 35%);
+  justify-content: space-evenly;
+  height: fit-content;
+}
+
+@media screen and (max-width: 800px){
+  .showReviews{
+    grid-template-columns: 70%; 
+    grid-auto-rows:min-content;
+    justify-content: center;
+    justify-content: space-around;
+  }
+
+  .bWrap button {
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+}
